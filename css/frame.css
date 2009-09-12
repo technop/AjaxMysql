@@ -1,0 +1,506 @@
+	*
+	{
+		margin:0;
+		padding:0;
+		font-family:sans-serif, Verdana, Geneva, Arial, Helvetica;
+		font-size:13px;
+	}
+	body
+	{
+		text-align:center;
+	}
+	#wrapper
+	{
+		position:relative;
+		text-align:left;
+		width:100%;
+		height:auto;
+		border-bottom:1px solid #ddd;
+		padding-bottom:15px;
+	}
+	#content-left
+	{
+		float:left;
+		position:relative;
+		margin:7px 0 0 10px;
+		width:20%;
+		height:630px;
+		overflow:auto;
+		background-color:#fff;
+	}
+	#content-right
+	{
+		float:right;
+		position:relative;
+		margin:7px 0 0 0;
+		width:78%;
+		height:630px;
+		background-color:#fff;
+	}
+	.clearfix:after
+	{
+		content: ".";
+		display: block;
+		clear: both;
+		visibility: hidden;
+		line-height: 0;
+		height: 0;
+	}
+	 
+	.clearfix
+	{
+		display: inline-block;
+	}
+	 
+	html[xmlns] .clearfix
+	{
+		display: block;
+	}
+	 
+	* html .clearfix
+	{
+		height: 1%;
+	}
+	
+	h1,h2,h3
+	{
+		font-size:13px;
+		margin:0;
+		padding:3px;
+		background: #000 url("../img/th.jpg") repeat-x;
+		height:18px;
+		color:#fff;
+	}
+	img
+	{
+		border:0;
+	}
+	hr
+	{
+		margin:5px 0;
+		color:#eee;
+		height:1px;
+	}
+	th img
+	{
+		width:18px;
+		height:18px;
+	}
+	/*** database and table nav ***/
+	#content-left ul li
+	{
+		list-style-type:none;
+		cursor:pointer;
+	}
+	#content-left ul li.database
+	{
+		font-weight:bold;
+		font-size:13px;
+		margin:3px 0;
+		border:1px solid #eee;
+		padding:3px;
+	}
+	
+	#content-left ul li ul#tables li.table
+	{
+		font-weight:bold;
+		font-size:12px;
+		border:1px solid #eee;
+		margin:3px 0;
+	}
+
+	ul#tables
+	{
+		display:none;
+		margin-left:20px;
+	}
+	
+	/*** tabs ***/
+	#tabs
+	{
+		overflow:auto;
+	}
+
+	/*** main tab ***/
+	/*** #tabs div {width:92%; height:570px; overflow:auto;} cause some layout problems ***/ 
+	#tables-tab
+	{
+		width:92%;
+		height:570px;
+		overflow:auto; 
+	}
+	
+	#structure-tab
+	{
+		width:92%;
+		height:570px;
+		overflow:auto; 
+	}
+	
+	#browse-tab
+	{
+		width:92%;
+		height:570px;
+		overflow:auto; 
+	}
+	
+	#sql-tab
+	{
+		width:92%;
+		height:570px;
+		overflow:auto; 
+	}
+	
+	#table-browser
+	{
+		width:92%;
+		height:470px;
+		overflow:auto;
+	}
+	
+	#raw-sql-browser
+	{
+		width:92%;
+		height:300px;
+		overflow:auto;
+	}
+	
+	/*** sub-database-tab ***/
+	/*** #sub-database-tab div {width:92%; height:570px; overflow:auto;} cause some layout problems ***/ 
+	#sub-database-tab ul
+	{
+		background-color:#eee;
+	}
+	
+	#db-info-tab
+	{
+		height:500px;
+		overflow:auto; 
+	}
+	
+	#variables-tab
+	{
+		height:500px;
+		overflow:auto; 
+	}
+	
+	#engines-tab
+	{
+		height:500px;
+		overflow:auto; 
+	}
+	
+	#charsets-tab
+	{
+		height:500px;
+		overflow:auto; 
+	}
+	
+	#processes-tab
+	{
+		height:500px;
+		overflow:auto; 
+	}
+
+	/*** Tables ***/
+	
+	#database-tab table
+	{
+		width:500px;
+	}
+	
+	#db-info-table td
+	{
+		padding:9px;
+	}
+
+	#create-new-db-table td
+	{
+		padding:9px;
+	}
+	
+	thead th
+	{
+		background: #000 url("../img/th.jpg") repeat-x;
+		height:24px;
+		padding:0 20px;
+		color:#fff;
+		text-align:center;
+	}
+	#table-browser th.column, #raw-sql-browser th.column
+	{
+		position:relative;
+		cursor:pointer;
+	}
+	td
+	{
+		padding:3px 5px;
+	}
+	tr.even
+	{
+		background-color:#eee;
+	}
+	
+	/*** status ***/
+	
+	#status
+	{
+		width:100%;
+	}
+	#status-top
+	{
+		position:relative;
+		background: #000 url("../img/bar.jpg") repeat-x;
+		height:32px;
+		color:#fff;
+	}
+	
+	#smartMysqlAdminLogo a
+	{
+		float:left;
+		font-style:italic;
+		font-weight:bold;
+		padding:5px;
+		color:#fff;
+		text-decoration:none;
+	}
+	#global_db_table
+	{
+		position:relative;
+		float:right;
+		margin:10px 60px 0 0;
+		text-align:right;
+		font-size:12px;
+		font-weight:bold;
+	}
+	
+	#refresh
+	{
+		position:absolute;
+		cursor:pointer;
+		top:7px;
+		right:33px;
+
+	}
+	#logout
+	{
+		position:absolute;
+		cursor:pointer;
+		top:7px;
+		right:5px;
+	}
+	
+	#global_table
+	{
+		margin:0 10px 0 0;
+	}
+	
+	#messageBar
+	{
+		display:none;
+		clear:both;
+		background-color:#eee;
+		padding:5px 10px;
+	}
+	#ajax_loader
+	{
+		visibility:visible;
+		margin:3px 0 0 4px;
+	}
+	
+	/*** dialogs ***/
+	
+	/*** edit-row dialog ***/
+	.dialog-closer
+	{
+		position:absolute;
+		top:0;
+		right:0;
+		color:#fff;
+		text-decoration:none;
+	}
+	#edit-row-dialog
+	{
+		position:absolute;
+		width:500px;
+		height:300px;
+		top:120px;
+		left:50px;
+		border:1px solid black;
+		background-color: #f5f5f5;
+		display:none;
+	}
+	#edit-row-dialog-handle
+	{
+		height:24px;
+		background: #000 url("../img/th.jpg") repeat-x;
+		color:#fff;
+		cursor:move;
+		font-weight:bold;
+	}
+	#edit-row-dialog-content
+	{
+		height:250px;
+		overflow:auto;
+	}	
+	
+	/*** .dialog-closer ***/
+	#insert-row-dialog-handle a
+	{
+		color:#fff;
+	}
+	
+	#action-save-row-button
+	{
+		position:absolute;
+		bottom:1px;
+		right:1px;
+	}
+	
+	/*** insert-row-dialog ***/
+	#insert-row-dialog
+	{
+		position:absolute;
+		width:500px;
+		height:300px;
+		top:120px;
+		left:50px;
+		border:1px solid black;
+		background-color: #f5f5f5;
+		display:none;
+	}
+	#insert-row-dialog-content
+	{
+		height:250px;
+		overflow:auto;
+	}		
+	#insert-row-dialog-handle
+	{
+		height:24px;
+		background: #000 url("../img/th.jpg") repeat-x;
+		color:#fff;
+		cursor:move;
+		font-weight:bold;
+	}
+	
+	/*** .dialog-closer ***/
+	#edit-row-dialog-handle a
+	{
+		color:#fff;
+	}
+
+	#action-insert-row-button
+	{
+		position:absolute;
+		bottom:1px;
+		right:1px;
+	}
+	/*** pager ***/
+	.pager
+	{
+		position:absolute;
+		bottom:2px;
+		left:10px;
+		margin:10px;
+		padding:10px;
+	}
+	.pages
+	{
+		margin:7px 0;
+	}
+	.current_page
+	{
+		color:black;
+		font-size:17px;
+		font-weight:bold;
+		padding:3px 6px;
+		margin:1px;
+	}
+	.pager_link
+	{
+		color:black;
+		font-size:12px;
+		font-weight:bold;
+		border:1px solid #cfcfcf;
+		padding:3px 6px;
+		margin:1px;
+		text-decoration:none;
+	}
+	
+	/*** actions ***/
+	
+	/*** tables-actions ***/
+	.action img
+	{
+		width:19px;
+		height:19px;
+		border:0;
+		cursor:pointer;
+		text-align:center;
+	}
+	.action
+	{
+		cursor:pointer;
+		text-align:center;
+	}
+
+	/*** buttons ***/
+	#run_button
+	{
+		width:70px; 
+		height:150px;
+		font-weight:bold;
+	}
+	.button
+	{
+		border:1px solid #356AA0;
+		background-color: #356AA0;
+		font-size:10px;
+		font-weight:bold;
+		color:#fff;
+		padding:2px 7px;
+	}
+	
+	/*** inputs ***/
+	#raw_sql_input
+	{
+		width:700px; 
+		height:150px;
+		border:1px solid #000;
+		padding:2px 0;
+	}
+	input
+	{
+		border:1px solid #000;
+		padding:2px 0;
+	}
+	input[type="checkbox"]
+	{
+		border:0;
+	}
+	.edit-row-input, .insert-row-input
+	{
+		width:220px;
+	}
+	
+	#raw-sql-table tr:hover
+	{
+		background-color:transparent;
+	}
+	#db-info-tab tr:hover
+	{
+		background-color:transparent;
+	}
+	tbody tr:hover
+	{
+		background-color:#C3D9FF;
+	}
+	.pager_link:hover
+	{
+		background-color:#C3D9FF;
+	}
+	
+	#tabs ul
+	{
+		background: #000 url("../img/ul-bar.png") repeat-x;
+	}
