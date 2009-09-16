@@ -431,46 +431,46 @@
 			getDbTables(SMA)
 		});
 		
-		//actions - tables
-		$(".action-tables-browse").live("click", function(e){
-			SMA.StatusTools.DbTableManager.setTable($(this).parent().find("td:first").text());
-			$(".browse_tab").trigger("click");
-		});
-		
-		$(".action-tables-structure").live("click", function(e){
-			SMA.StatusTools.DbTableManager.setTable($(this).parent().find("td:first").text());
-			$(".structure_tab").trigger("click");
-		});
-		
-		$(".action-tables-truncate").live("click", function(e){
-			var truncateQuery = "TRUNCATE TABLE " + $(this).parent().find("td:first").text();
-			var ensureTruncate = window.confirm("Are You Sure <" + truncateQuery + ">");
-			if(ensureTruncate){
-				var options = {
-					postData : {
-						db : SMA.StatusTools.DbTableManager.getDb(),
-						rawSql : truncateQuery
-					}
-				};
-				ExtendRecursive(SMA.QueryManager.RawSql.options, options);
-				runRawSql(SMA, options);
+		//tables-tab actions
+		$("#tables-tab").bind("click", function(e){
+			e.stopPropagation();
+			$target = $(e.target);
+			var action = $target.attr("class");
+			var table = $target.parent().siblings("td:first").text();
+			if(action === "browse"){
+				SMA.StatusTools.DbTableManager.setTable(table);
+				$(".browse_tab").trigger("click");
+			} else if(action === "structure"){
+				SMA.StatusTools.DbTableManager.setTable(table);
+				$(".structure_tab").trigger("click");
+			} else if(action === "truncate"){
+				var truncateQuery = "TRUNCATE TABLE " + table;
+				var ensureTruncate = window.confirm("Are You Sure <" + truncateQuery + ">");
+				if(ensureTruncate){
+					var options = {
+						postData : {
+							db : SMA.StatusTools.DbTableManager.getDb(),
+							rawSql : truncateQuery
+						}
+					};
+					ExtendRecursive(SMA.QueryManager.RawSql.options, options);
+					runRawSql(SMA, options);
+				}
+			} else if(action === "drop"){
+				var dropQuery = "DROP TABLE " + table;
+				var ensureDrop = window.confirm("Are You Sure <" + dropQuery + ">");
+				if(ensureDrop){
+					var options = {
+						postData : {
+							db : SMA.StatusTools.DbTableManager.getDb(),
+							rawSql : dropQuery
+						}
+					};
+					ExtendRecursive(SMA.QueryManager.RawSql.options, options);
+					runRawSql(SMA, options);
+				}
 			}
 		});
-		
-		$(".action-tables-drop").live("click", function(e){
-			var dropQuery = "DROP TABLE " + $(this).parent().find("td:first").text();
-			var ensureDrop = window.confirm("Are You Sure <" + dropQuery + ">");
-			if(ensureDrop){
-				var options = {
-					postData : {
-						db : SMA.StatusTools.DbTableManager.getDb(),
-						rawSql : dropQuery
-					}
-				};
-				ExtendRecursive(SMA.QueryManager.RawSql.options, options);
-				runRawSql(SMA, options);
-			}
-		});	
 		
 		$(".structure_tab").bind("click", function(){
 			getTableStructure(SMA)
@@ -719,7 +719,7 @@
 		
 		//drop db
 		$(".action-drop-db").live("click", function(){
-			var sql = "DROP DATABASE " + $(this).prev("td").text() ;
+			var sql = "DROP DATABASE " + $(this).prev("td").text();
 			var ensureDropDb = window.confirm("ARE YOU SURE <" + sql + ">");
 			if(ensureDropDb){
 				var options = {

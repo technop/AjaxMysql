@@ -102,10 +102,10 @@
 						SMA.StatusTools.MessageManager.hideMsg();
 						//rebuild table with new headers and table actions
 						resJson.table.addHeaderCell = "<th>Browse</th> <th>Structure</th> <th>Empty</th> <th>Drop</th>";
-						resJson.table.addBodyCell = "<td class='action-tables-browse action' title='Browse'><img src='img/action-browse.png' alt='browse' title='Browse'/></td>"
-							+ "<td class='action-tables-structure action' title='Structure'><img src='img/action-browse1.png' alt='Structure' title='Structure'/></td>"
-							+ "<td class='action-tables-truncate action' title='Empty'><img src='img/action-empty.png' alt='Empty' title='Empty'/></td>"
-							+ "<td class='action-tables-drop action' title='Drop'><img src='img/action-delete.png' alt='Drop' title='Drop'/></td>"
+						resJson.table.addBodyCell = "<td class='action' title='Browse'><img class='browse' src='img/action-browse.png' alt='browse' title='Browse'/></td>"
+							+ "<td class='action' title='Structure'><img class='structure' src='img/action-browse1.png' alt='Structure' title='Structure'/></td>"
+							+ "<td class='action' title='Empty'><img class='truncate' src='img/action-empty.png' alt='Empty' title='Empty'/></td>"
+							+ "<td class='action' title='Drop'><img class='drop' src='img/action-delete.png' alt='Drop' title='Drop'/></td>"
 						var table = createTable(null, null, resJson.table, resJson.table, null, null);
 						$("#tables-tab").html(table);
 					}
