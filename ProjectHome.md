@@ -1,0 +1,1 @@
+smartMySQLAdmin is a free, fully AJAX based MySQL management tool written in PHP and JavaScript based on JSON data-format. You can use smartMySQLAdmin for basic CRUD operations. Just unzip and start CRUD.
