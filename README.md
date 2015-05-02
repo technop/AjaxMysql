@@ -1,2 +1,2 @@
 # smartmysqladmin
-Ajax web file manager
+Ajax web mysql manager
